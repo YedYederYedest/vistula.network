@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# vistula.network
 
-## Getting Started
+the official webring for vistula university students. a place to find other cool people at vistula — engineers, designers, writers, artists, and everyone in between. (Inspired by uwaterloo.network)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## how to join
+
+joining takes about 5 minutes. you'll need a github account and a personal website. (You can also email me and I can add you manually, IF you aren't a dev)
+
+### 1. fork the repository
+
+click the **fork** button in the top right of this page to create your own copy of the repo.
+
+### 2. add your profile picture
+
+- use a square image, 400×400px (your twitter/x or linkedin profile pic works great, you can also try an online converter)
+- name the file `your-name.jpg` (or `.png`) — use hyphens, all lowercase
+- drop it into the `public/photos/` folder
+
+### 3. add your entry to `students.ts`
+
+open `src/data/students.ts` and add your entry to the `members` array. copy the template below:
+
+```ts
+{
+  id: "your-name",                          // hyphens, lowercase
+  name: "Your Full Name",
+  website: "https://yourwebsite.com",       // required
+  program: "Computer Engineering",          // your program at vistula
+  year: "2027",                             // optional: graduation year
+  roles: ["engineering", "design"],         // what you do — see options below
+  verticals: ["ai", "saas"],               // industries you care about — see options below
+  profilePic: "/photos/your-name.jpg",
+  instagram: "https://instagram.com/yourhandle",
+  twitter: "https://x.com/yourhandle",
+  linkedin: "https://linkedin.com/in/yourhandle",
+  connections: ["friend-one", "friend-two"], // ids of people you know on the webring
+},
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**role options:** `engineering` · `design` · `product` · `growth` · `ai/ml` · `research` · `hardware` · `quant` · `software` · `finance` · `vc`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**vertical options:** `fintech` · `ai` · `climate` · `healthcare` · `edtech` · `marketplaces` · `robotics` · `defense` · `hard tech` · `saas` · `consumer` · `creator tools`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+all fields except `id`, `name`, and `website` are optional — fill in as much or as little as you like.
 
-## Learn More
+### 4. submit a pull request
 
-To learn more about Next.js, take a look at the following resources:
+push your changes to your fork, then open a pull request back to this repository. title it something like `add: your name`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 5. wait for approval
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+i'll review and merge it. once merged, you'll appear on the site automatically.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## rules
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- you must be a vistula university student (current or alumni)
+- you must have a personal website — that's the whole point of a webring (exceptions are made)
+
+---
+
+## webring widget
+
+WIP
+
+---
+
+## contributing
+
+found a bug or want to improve the site? open an issue or submit a pr — contributions are welcome.
+
+---
+
+*inspired by [oscar gaske](https://oscargaske.me) and [shayaan azeem](https://shayaanazeem.com)*

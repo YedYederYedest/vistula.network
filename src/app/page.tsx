@@ -1,27 +1,73 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
 import StudentTable from "../components/students-table";
+import NetworkGraph from "../components/network-graph";
+import { AiOutlineSearch } from "react-icons/ai";
 
 export default function Home() {
+  const [query, setQuery] = useState("");
+
   return (
-    <div>
-      <h1>
-        vistula.network
-      </h1>
-      <div>
-        <p>
-          welcome to the official webring for Vistula University students.
-        </p>
-        <p>
-          our campus is home to engineers, writers, artists, organizers, and people doing interesting work across disciplines. this is a place to find other cool people at Vistula University, a directory of the students who make the school more interesting.
-        </p>
-        <p>
+    <main className="min-h-screen bg-[#111111] text-neutral-300 px-10 py-12 font-mono">
 
-          want to join? submit a pull request to this repository.
+      <div className="flex items-start justify-between gap-8 mb-14">
 
-        </p>
-        <p>Inspired by Oscar Gaske and Shayaan Azeem</p>
+        <div className="max-w-xl">
+          <h1 className="text-3xl text-white tracking-tight mb-5">
+            vistula.network
+          </h1>
+          <p className="text-sm text-neutral-400 leading-relaxed mb-3">
+            welcome to the official webring for vistula university students.
+          </p>
+          <p className="text-sm text-neutral-500 leading-relaxed mb-3">
+            our campus is home to engineers, writers, artists, organizers, and
+            people doing interesting work across disciplines. this is a place to
+            find other cool people at vistula, a directory of the students who
+            make the school more interesting.
+          </p>
+          <p className="text-sm text-neutral-500 leading-relaxed mb-3">
+            want to join?{" "}
+            <a
+              href="https://github.com/coronado03/vistula.network"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-300 underline underline-offset-2 hover:text-white transition-colors"
+            >
+              submit a pull request
+            </a>
+          </p>
+          <p className="text-xs text-neutral-600 mt-4">
+            inspired by{" "}
+            <a href="https://oscargaske.me/" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-400 transition-colors underline underline-offset-2">oscar gaske</a>
+            {" "}and{" "}
+            <a href="https://shayaanazeem.com" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-400 transition-colors underline underline-offset-2">shayaan azeem</a>
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-3 w-[460px] shrink-0">
+          <div className="relative">
+            <AiOutlineSearch
+              size={15}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-600"
+            />
+            <input
+              type="text"
+              placeholder="search members..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="w-full bg-neutral-900 border border-neutral-800 rounded-md pl-8 pr-4 py-2 text-sm text-neutral-300 placeholder-neutral-600 focus:outline-none focus:border-neutral-600 transition-colors"
+            />
+          </div>
+
+          <div className="h-[340px] rounded-md overflow-hidden border border-neutral-800 bg-neutral-950">
+            <NetworkGraph />
+          </div>
+        </div>
       </div>
-      <StudentTable />
-    </div>
+
+      <StudentTable searchQuery={query} />
+
+    </main>
   );
 }
