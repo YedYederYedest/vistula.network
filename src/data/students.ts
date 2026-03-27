@@ -112,6 +112,20 @@ export const members: Member[] = [
 
   // ============================================
   // ADD YOUR ENTRY ABOVE THIS LINE
+{
+  id: "yuri-dejoya",                          // hyphens, lowercase
+  name: "Yuri Evgeni U. de Joya",
+  website: "https:yedyederyedest.com",       // required
+  program: "Computer Engineering",          // your program at vistula
+  year: "2027",                             // optional: graduation year
+  roles: ["engineering", "software", "hardware"],         // what you do — see options below
+  verticals: [""],               // industries you care about — see options below
+  profilePic: "/photos/YuriDeJoya.jpg",
+  linkedin: "https://www.linkedin.com/in/yuri-evgeni-de-joya-7a8094310/",
+  instagram: "https://instagram.com/yuridejoya",
+  connections: ["sebastian-coronado", "nurtas-alibi"], // ids of people you know on the webring
+},
+  
   // ============================================
 ];
 
